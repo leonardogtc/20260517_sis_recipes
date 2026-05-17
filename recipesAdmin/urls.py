@@ -3,9 +3,9 @@ from django.urls import path
 from django.contrib import admin
 
 
-def my_view(request):
+def home(request):
     # This is a placeholder view function
-    return HttpResponse("This is the 'sobre' page.")
+    return HttpResponse("Página principal do seu aplicativo.")
 
 
 def sobre(request):
@@ -18,7 +18,7 @@ def contato(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', my_view, name='sobre'),
+    path('', home, name='home'),
     path('sobre/', sobre, name='sobre'),
     path('contato/', contato, name='sobre'),
 ]
