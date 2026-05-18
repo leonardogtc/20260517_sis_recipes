@@ -11,5 +11,5 @@ def home(request):
 def recipe(request, id):
     # This is a placeholder view function
     return render(request, 'recipes/pages/recipe-view.html', context={
-        'id': id,
+        'name': 'Leonardo',
     })
