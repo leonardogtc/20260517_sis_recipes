@@ -12,9 +12,10 @@ def home(request):
 
 
 def category(request, category_id):
-    recipes = Recipe.objects.filter(category__id=category_id).order_by('-id')
+    recipes = Recipe.objects.filter(
+        category__id=category_id, is_published=True).order_by('-id')
     # This is a placeholder view function
-    return render(request, 'recipes/pages/home.html', context={
+    return render(request, 'recipes/pages/category.html', context={
         'recipes': recipes,
     })
 
