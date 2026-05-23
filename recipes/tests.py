@@ -1,6 +1,11 @@
 from django.test import TestCase
+from django.urls import reverse
 
 
 class RecipeURLsTest(TestCase):
     def test_the_pytest_is_ok(self):
-        self.assertEqual(1, 1, "The pytest is not working properly")
+        assert 1 == 1, 'Um é igual a um'
+
+    def test_recipe_home_url_is_correct(self):
+        home_url = reverse('recipes:home')
+        self.assertEqual(home_url, '/')
