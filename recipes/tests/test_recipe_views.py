@@ -27,3 +27,8 @@ class RecipeViewsTest(TestCase):
         response = self.client.get(reverse('recipes:home'))
         self.assertIn('No recipes found Here!',
                       response.content.decode('utf-8'))
+
+    def test_recipe_category_view_returns_status_code_404(self):
+        response = self.client.get(
+            reverse('recipes:category', kwargs={'category_id': 1000}))
+        self.assertEqual(response.status_code, 404)
